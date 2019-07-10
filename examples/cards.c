@@ -7,17 +7,21 @@ int main()
     puts("Введите название карты: ");
     scanf("%2s", card_name);
     int val = 0;
-    if (card_name[0] == 'K') {
+    switch (card_name[0]) {  
+    case 'K':
+    case 'Q':
+    case 'J':
         val = 10;
-    } else if (card_name[0] == 'Q') {
-        val = 10;
-    } else if (card_name[0] == 'J') {
-        val = 10;
-    } else if (card_name[0] == 'A') {
+        break;
+    case 'A':
         val = 11;
-    } else {
+        break;
+    default:
         val = atoi(card_name);
     }
-    printf("Ценность карты: %i\n", val);
+    if ((val>2) && (val<7)) {
+        puts("Счетчик увеличился");
+    } else if (val == 10) 
+        puts("Счетчик уменьшился");
     return 0;
 }
