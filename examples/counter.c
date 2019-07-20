@@ -12,14 +12,11 @@ int main()
     while ((str = getchar()) != EOF){
         if(str == ' '){
             space++;
-        } 
-        else if(str == '\t'){
+        } else if(str == '\t'){
             tab++;
-        }
-        else if(str == '\n'){
+        } else if(str == '\n'){
             finish++;
-        }
-        else if(str == '+'){
+        } else if(str == '+'){
             break;
         }
     }
